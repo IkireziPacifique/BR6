@@ -1,0 +1,135 @@
+Database Creation
+CREATE DATABASE Br6
+Table Creation
+CREATE TABLE `Staff` (
+  `StaffId` int,
+  `StaffName` varchar(50),
+  `No_Clients` varchar(50),
+  PRIMARY KEY (`StaffId`)
+);
+
+CREATE TABLE `Customer` (
+  `CID` int,
+  `Cname` varchar(50),
+  `Phone_no` varchar(50),
+  PRIMARY KEY (`CID`)
+);
+
+CREATE TABLE `Plants` (
+  `PlantId` int,
+  `Psize` varchar(50),
+  `Pname` varchar(50),
+  PRIMARY KEY (`PlantId`)
+);
+
+CREATE TABLE `Bills` (
+  `BId` int,
+  `No_Zones` varchar(50),
+  `TId` int,
+  PRIMARY KEY (`BId`)
+);
+
+CREATE TABLE `Sector` (
+  `SID ` int,
+  `Sname` varchar(50),
+  `No_Zones` varchar(50),
+  `SOffice` varchar(50),
+  `Location` varchar(50),
+  `No_plants` varchar(50),
+  `StaffId` int,
+  PRIMARY KEY (`SID `)
+);
+
+CREATE TABLE `Payments` (
+  `PaymentId` int,
+  `PaymentModel` varchar(50),
+  `Remaining` varchar(50),
+  `Bill_Paid` varchar(50),
+  `CId` int,
+  `BId` int,
+  PRIMARY KEY (`PaymentId`)
+);
+
+CREATE TABLE `Routes` (
+  `RId` int,
+  `No_Plants` varchar(50),
+  `Status` varchar(50),
+  `PlantId` int,
+  PRIMARY KEY (`RId`)
+);
+
+CREATE TABLE `Premises` (
+  `PID` int,
+  `Meter_no` varchar(50),
+  `CID` int,
+  `status` varchar(50),
+  `StaffId` int,
+  `RId` int,
+  `BId` int,
+  `ZID` int,
+  PRIMARY KEY (`PID`)
+);
+
+CREATE TABLE `Zones` (
+  `ZID` int,
+  `Zname` varchar(50),
+  `MonthlySupply` varchar(50),
+  `MonthlyConsumption` varchar(50),
+  `No_Routes` varchar(50),
+  `No_Billers` varchar(50),
+  `SID` int,
+  `RId` int,
+  PRIMARY KEY (`ZID`)
+);
+
+CREATE TABLE `Tarriff` (
+  `TId ` int,
+  `Tarriff_Type` varchar(50),
+  PRIMARY KEY (`TId `)
+);
+
+Values Insertion in Staff
+INSERT INTO staff (StaffId, StaffName, No_Clients) VALUES (1, Paul, 1)
+INSERT INTO staff (StaffId, StaffName, No_Clients) VALUES (2, Pauline, 1)
+
+Values Insertion in Customer
+INSERT INTO staff (CID, Cname, Phone_no) VALUES (1, Jane Doe, 0787728928)
+INSERT INTO staff (CID, Cname, Phone_no) VALUES (2, John Doe, 0722277653)
+
+Values Insertion in Plants
+INSERT INTO staff (PlantId, Psize, Pname) VALUES (1, 5, 001)
+INSERT INTO staff (PlantId, Psize, Pname) VALUES (2, 5, 002)
+
+
+
+Values Insertion in Bills
+INSERT INTO staff (Bid, No_Zones, Tid)VALUES (1, 2, 1)
+INSERT INTO staff (Bid, No_Zones, Tid) VALUES (2, 3, 4)
+
+Values Insertion in Sector
+INSERT INTO staff (SID, Sname, No_Zones, Soffice, Location, No_plants, StaffId) VALUES (1, Kacyiru, 4, 001, KG897, 2, 1)
+INSERT INTO staff (SID, Sname, No_Zones, Soffice, Location, No_plants, StaffId) VALUES (2, Kicukiro, 4, 002, Kn234, 2, 1)
+
+Values Insertion in Payments
+INSERT INTO staff (PaymentId, PaymentModel, Remaining, Bill_Paid, Cid, BId) VALUES (1, monthly, 0, 1000, 1, 1)
+INSERT INTO staff (PaymentId, PaymentModel, Remaining, Bill_Paid, Cid, BId) VALUES (2, monthly, 1000, 2000, 1, 2)
+
+Values Insertion in Routes
+INSERT INTO staff (Rid, No_Plants, Status, PlantId) VALUES (1, 2, active, 1)
+INSERT INTO staff (Rid, No_Plants, Status, PlantId) VALUES (1, 1, suspended, 2)
+
+Values Insertion in Premises
+INSERT INTO staff (PID, Meter_no, CID, status, StaffId, Rid, Bid, ZID) VALUES (1, 10, 1, active, 2, 1,1,1)
+INSERT INTO staff (PID, Meter_no, CID, status, StaffId, Rid, Bid, ZID) VALUES (2, 15, 2, active, 1, 2, 2, 2)
+
+Values Insertion in Zones
+INSERT INTO staff (ZID, Zname, MonthlySupply, MonthlyConsumption, No_Routes, No_Billers, SID, RId) VALUES (1, 001, 2, 2, 1, 1, Kicukiro, 2)
+INSERT INTO staff (ZID, Zname, MonthlySupply, MonthlyConsumption, No_Routes, No_Billers, SID, RId) VALUES (2, 002, 4, 2, 1, Kacyiru, 1)
+
+
+Values Insertion in Tarriff
+INSERT INTO staff (Tid, Tarriff_Type) VALUES (1, Commercial)
+INSERT INTO staff (Tid, Tarriff_Type s) VALUES (2, Domestic)
+
+
+
